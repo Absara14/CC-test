@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack</title>
+  </head>
+  <body>
+    <script>
+      let a = "12 + 3 * 7";
+      let newArray = a.split(" ");
+      console.log(newArray);
+      let b = [];
+      let c = [];
+      newArray.forEach((s) => {
+        if (!isNaN(parseInt(s))) {
+          b.push(parseInt(s));
+        } else {
+          c.push(s);
+        }
+      });
+      let total = b.shift();
+      c.forEach((s) => {
+        let n = b.shift();
+        switch (s) {
+          case "+":
+            total += n;
+            break;
+          case "-":
+            total -= n;
+            break;
+          case "*":
+            total *= n;
+            break;
+          case "/":
+            total /= n;
+            break;
+          default:
+            console.log("Not applicable");
+        }
+      });
+      console.log(total);
+    </script>
+  </body>
+</html>

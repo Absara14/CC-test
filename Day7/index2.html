@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="product" data-id="1" data-price="100">
+      <h2>iphone</h2>
+      <p>price:80,000</p>
+      <button onclick="displayproduct(1)">Ok</button>
+    </div>
+    <div class="product" data-id="2" data-price="300">
+      <h2>samsang</h2>
+      <p>price:40,000</p>
+      <button onclick="displayproduct(2)">Ok</button>
+    </div>
+    <div class="product" data-id="3" data-price="400">
+      <h2>vivo</h2>
+      <p>price:30,000</p>
+      <button onclick="displayproduct(3)">Ok</button>
+    </div>
+
+    <script>
+      function displayproduct(id) {
+        const product = document.querySelector(
+          `.product[data-id="` + id + `"]`
+        );
+        const productName = product.querySelector("h2").textContent;
+        const productPrice = product.getAttribute("data-price");
+        alert(
+          `Product "${productName}" added to cart.Price:Rs.${productPrice}`
+        );
+      }
+    </script>
+  </body>
+</html>
