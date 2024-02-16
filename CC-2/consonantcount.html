@@ -15,7 +15,7 @@
       let countConsonants = () => {
         let inputText = document.getElementById("inputtext").value;
         let consonant = /[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/g;
-        let consonantCount = (inputText.replce(consonant) || []).length;
+        let consonantCount = (inputText.match(consonant) || []).length;
 
         if (consonantCount === 0) {
           console.log("No Consonants");
